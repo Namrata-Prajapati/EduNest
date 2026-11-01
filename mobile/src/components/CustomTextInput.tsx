@@ -6,15 +6,16 @@ import { borderRadius, spacing } from '../utils/sizes';
 // defining the props type for the CustomTextInput component
 type Props = {
   value: string;
+  placeholder: string;
   onChangeText: (text: string) => void;
 };
 
-const CustomTextInput = ({ value, onChangeText }: Props) => {
+const CustomTextInput = ({ value, placeholder, onChangeText }: Props) => {
   return (
     <View>
       <TextInput
         value={value}
-        placeholder="Enter text"
+        placeholder={placeholder}
         style={styles.input}
         onChangeText={onChangeText}
       />

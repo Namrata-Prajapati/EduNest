@@ -1,3 +1,5 @@
+com/ftaci/futuretech/repository/UserRepository.class
 com/ftaci/futuretech/controller/HomeController.class
 com/ftaci/futuretech/FutureTechApplication.class
+com/ftaci/futuretech/controller/UserController.class
 com/ftaci/futuretech/entity/User.class

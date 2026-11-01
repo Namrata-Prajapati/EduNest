@@ -1,3 +1,5 @@
 /Users/namrataprajapati/Documents/EduNest/backend/src/main/java/com/ftaci/futuretech/FutureTechApplication.java
 /Users/namrataprajapati/Documents/EduNest/backend/src/main/java/com/ftaci/futuretech/controller/HomeController.java
+/Users/namrataprajapati/Documents/EduNest/backend/src/main/java/com/ftaci/futuretech/controller/UserController.java
 /Users/namrataprajapati/Documents/EduNest/backend/src/main/java/com/ftaci/futuretech/entity/User.java
+/Users/namrataprajapati/Documents/EduNest/backend/src/main/java/com/ftaci/futuretech/repository/UserRepository.java

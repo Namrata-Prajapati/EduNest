@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import {
   borderRadius,
@@ -14,6 +14,28 @@ import color from '../utils/color';
 export const LoginScreen = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('http://10.0.2.2:8080/api/users');
+      console.log('HTTP Status:', response.status);
+
+      if (!response.ok) {
+        throw new Error(`HTTP Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      console.log('Users fetched successfully:', data);
+    } catch (error) {
+      console.log('Error fetching data:', error);
+    }
+  };
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
   return (
     <View style={styles.mainContainer}>
       <Image source={require('../assets/ftaci-logo.png')} style={styles.logo} />
@@ -27,14 +49,22 @@ export const LoginScreen = () => {
       </View>
       <View style={styles.textInputContainer}>
         <Text style={styles.placeholderText}>Email</Text>
-        <CustomTextInput value={email} onChangeText={setEmail} />
+        <CustomTextInput
+          value={email}
+          placeholder="Enter email"
+          onChangeText={setEmail}
+        />
       </View>
       <View style={styles.textInputContainer}>
         <Text style={styles.placeholderText}>Password</Text>
-        <CustomTextInput value={password} onChangeText={setPassword} />
+        <CustomTextInput
+          value={password}
+          placeholder="Enter password"
+          onChangeText={setPassword}
+        />
       </View>
 
-      <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.buttonTextStyle}>Login</Text>
       </TouchableOpacity>
     </View>
